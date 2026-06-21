@@ -1,0 +1,176 @@
+/* ==========================================================================
+   GLOBAL LAYOUT (HEADER, FOOTER, ACCESSIBILITY BAR)
+   ========================================================================== */
+
+.accessibility-bar {
+  background-color: #1E293B;
+  color: $white;
+  padding: 0.5rem 0;
+  font-size: 0.8rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  .accessibility-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .acc-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .acc-label {
+    font-weight: 600;
+    margin-right: 0.25rem;
+  }
+
+  button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: $white;
+    padding: 0.3rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    @include transition-smooth;
+
+    &:hover, &.active {
+      background-color: $primary-color;
+      border-color: $primary-color;
+    }
+  }
+}
+
+.main-header {
+  background-color: $white;
+  padding: 0.6rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 1px 15px rgba(0, 0, 0, 0.04);
+  @include transition-smooth;
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @include mobile-only {
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+  }
+
+  .logo-text {
+    color: $dark-color;
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: 1px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    display: block;
+    border-left: 3px solid $primary-color;
+    padding-left: 8px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+
+    @include mobile-only {
+      gap: 1rem;
+    }
+
+    a {
+      color: $dark-color;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      position: relative;
+      padding-bottom: 2px;
+      @include transition-smooth((color));
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: $primary-color;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+      }
+
+      &:hover {
+        color: $primary-color;
+
+        &::after {
+          transform: scaleX(1);
+          transform-origin: bottom left;
+        }
+      }
+    }
+  }
+}
+
+.main-footer {
+  background-color: $dark-color;
+  color: $white;
+  padding: 4rem 0;
+  text-align: center;
+
+  .btn-secondary {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: $white;
+    padding: 0.8rem 2rem;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 6px;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    @include transition-smooth;
+
+    &:hover {
+      background-color: $white;
+      color: $dark-color;
+    }
+  }
+
+  .footer-links {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+
+    a {
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+
+      &:hover {
+        color: $white;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .eco-label {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+    max-width: 600px;
+    margin: 1.5rem auto 0 auto;
+  }
+}

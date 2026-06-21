@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Découvrez les meilleurs spectacles, concerts et expositions sur VilleNova. Votre billetterie et agenda culturel de référence.">
+    <title>VilleNova — Les meilleurs spectacles &amp; événements</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Aller directement au contenu principal</a>
+
+    <div class="accessibility-bar" role="toolbar" aria-label="Options d'accessibilité visuelle">
+        <div class="container accessibility-container">
+            <div class="acc-group">
+                <span class="acc-label">Texte :</span>
+                <button id="btn-zoom-out" aria-label="Diminuer la taille du texte">− A</button>
+                <button id="btn-zoom-reset" aria-label="Taille de texte normale">A</button>
+                <button id="btn-zoom-in" aria-label="Agrandir la taille du texte">+ A</button>
+            </div>
+            <div class="acc-group">
+                <button id="btn-contrast" class="acc-toggle-btn" aria-label="Activer le mode daltonisme" aria-pressed="false">👁️ Daltonisme</button>
+                <button id="btn-darkmode" class="acc-toggle-btn" aria-label="Activer le mode nuit" aria-pressed="false">🌙 Mode Nuit</button>
+                <button id="btn-dyslexic" class="acc-toggle-btn" aria-label="Activer la police lisible" aria-pressed="false">🔤 Police Lisible</button>
+            </div>
+            <div class="acc-group">
+                <button id="btn-audio-reader" class="acc-toggle-btn" aria-label="Activer la lecture vocale au survol" aria-pressed="false">🔊 Audio-Description</button>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html" aria-label="Retour à l'accueil de VilleNova">
+                    <span class="logo-text">VILLE<br>NOVA</span>
+                </a>
+            </div>
+            <nav aria-label="Menu principal">
+                <ul class="nav-links">
+                    <li><a href="#agenda" class="nav-link-item">Tout l'agenda</a></li>
+                    <li><a href="#agenda" class="nav-link-item" data-category="concert">Concerts</a></li>
+                    <li><a href="#agenda" class="nav-link-item" data-category="exposition">Expos</a></li>
+                    <li><a href="#agenda" class="nav-link-item" data-category="spectacle">Spectacles</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero section -->
+        <section class="hero-section" aria-label="Introduction visuelle">
+            <div class="video-container">
+                <video muted loop playsinline preload="metadata" class="hero-video" id="hero-video-player" aria-hidden="true">
+                    <source src="assets/19490318-uhd_3840_2160_24fps (1).mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la lecture de vidéos.
+                </video>
+                <div class="hero-overlay">
+                    <div class="hero-content">
+                        <h1>Les meilleurs spectacles de VilleNova</h1>
+                        <p>Sélectionnez des places de choix, bénéficiez d'offres exclusives et réservez vos billets officiels en temps réel.</p>
+                        <div class="hero-actions">
+                            <a href="#agenda" class="btn-primary">Découvrir l'affiche</a>
+                            <button id="btn-video-control" class="btn-video-control" aria-label="Lancer la lecture de la vidéo">Lecture ▶</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search and filters section -->
+        <section id="agenda" class="search-section" aria-label="Recherche et filtres d'événements">
+            <div class="container">
+                <form class="search-bar" role="search" id="search-form" aria-label="Rechercher un événement">
+                    <div class="input-group">
+                        <label for="search-input" class="sr-only">Rechercher un spectacle, un concert, une exposition…</label>
+                        <input type="search" id="search-input" name="search" placeholder="Rechercher un spectacle, un concert, une expo…" autocomplete="off">
+                    </div>
+                    <button type="submit" class="btn-search">Rechercher</button>
+                </form>
+
+                <div class="quick-filters" role="group" aria-label="Filtrer par catégorie">
+                    <button class="filter-btn active" data-filter="all">Tous les spectacles</button>
+                    <button class="filter-btn" data-filter="concert">Concerts</button>
+                    <button class="filter-btn" data-filter="exposition">Expositions</button>
+                    <button class="filter-btn" data-filter="spectacle">Spectacles</button>
+                    <button class="filter-btn" data-filter="festival">Festivals</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Events section -->
+        <section class="events-section" aria-label="Événements à l'affiche">
+            <div class="container">
+                <h2>À l'affiche en ce moment</h2>
+                <p class="subtitle">Réservez vos places aux meilleurs tarifs pour les événements incontournables de la saison</p>
+
+                <div id="loader" class="loader" role="status" aria-live="polite" aria-label="Chargement des événements">
+                    <span>Mise à jour de la billetterie VilleNova…</span>
+                </div>
+
+                <div id="events-grid" class="events-grid"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer section -->
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <button class="btn-secondary" type="button">Proposer un événement / Partenariat</button>
+            <p class="footer-links">
+                <a href="#">Plan du site</a> —
+                <a href="#">Mentions légales</a> —
+                &copy; 2026 VilleNova — Tous droits réservés
+            </p>
+            <p class="eco-label">Ce site respecte les principes de l'éco-conception numérique, du RGPD et de l'accessibilité WCAG 2.2 AA.</p>
+        </div>
+    </footer>
+
+    <button id="back-to-top" aria-label="Retourner en haut de la page" title="Retour en haut">↑</button>
+
+    <script src="./js/main.js" type="module"></script>
+</body>
+</html>

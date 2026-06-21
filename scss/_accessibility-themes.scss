@@ -1,0 +1,56 @@
+/* ==========================================================================
+   ACCESSIBILITY THEMES & UTILITIES
+   ========================================================================== */
+
+body.dark-mode {
+  background-color: #0d0d0d;
+  color: #f1f1f1 !important; 
+  .main-header, .search-section, .event-card, .booking-card {
+    background-color: #1a1a1a;
+    border-color: #2a2a2a;
+    color: #f1f1f1;
+  }
+
+  .logo-text, h3, h1, .price-indicator strong {
+    color: $white !important;
+  }
+
+  .event-detail-body, p, span:not([class*="badge"]) {
+    color: #ccc !important;
+  }
+}
+
+body.high-contrast {
+  filter: contrast(120%) saturate(140%);
+
+  .event-card {
+    border: 2px solid $dark-color;
+  }
+
+  .price-indicator strong, .event-meta {
+    color: darken($primary-color, 15%);
+    text-shadow: 0.5px 0.5px 0px #000;
+  }
+
+  .filter-btn.active {
+    border-width: 2.5px;
+  }
+}
+
+body.dyslexic-friendly {
+  font-family: Arial, Helvetica, sans-serif !important;
+  letter-spacing: 0.08em;
+  word-spacing: 0.15em;
+
+  &.dark-mode {
+    color: #f1f1f1;
+
+    p, span, a, h1, h2, h3 {
+      color: #ccc !important;
+    }
+    
+    h1, h2, h3, .logo-text, strong {
+      color: #ffffff !important;
+    }
+  }
+}

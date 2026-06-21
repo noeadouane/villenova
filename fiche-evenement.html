@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Découvrez tous les détails et réservez vos billets officiels pour cet événement sur VilleNova.">
+    <title>Détail du spectacle — VilleNova</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <a href="#event-detail-content" class="skip-link">Aller directement aux détails du spectacle</a>
+
+    <div class="accessibility-bar" role="toolbar" aria-label="Options d'accessibilité visuelle">
+        <div class="container accessibility-container">
+            <div class="acc-group">
+                <span class="acc-label">Texte :</span>
+                <button id="btn-zoom-out" aria-label="Diminuer la taille du texte">− A</button>
+                <button id="btn-zoom-reset" aria-label="Taille de texte normale">A</button>
+                <button id="btn-zoom-in" aria-label="Agrandir la taille du texte">+ A</button>
+            </div>
+            <div class="acc-group">
+                <button id="btn-contrast" class="acc-toggle-btn" aria-label="Activer le mode daltonisme" aria-pressed="false">👁️ Daltonisme</button>
+                <button id="btn-darkmode" class="acc-toggle-btn" aria-label="Activer le mode nuit" aria-pressed="false">🌙 Mode Nuit</button>
+                <button id="btn-dyslexic" class="acc-toggle-btn" aria-label="Activer la police lisible" aria-pressed="false">🔤 Police Lisible</button>
+            </div>
+            <div class="acc-group">
+                <button id="btn-audio-reader" class="acc-toggle-btn" aria-label="Activer l'assistance audio au survol" aria-pressed="false">🔊 Audio-Description</button>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html" aria-label="Retour à l'accueil de VilleNova">
+                    <span class="logo-text">VILLE<br>NOVA</span>
+                </a>
+            </div>
+            <nav aria-label="Menu principal">
+                <ul class="nav-links">
+                    <li><a href="index.html#agenda" class="nav-link-item">Tout l'agenda</a></li>
+                    <li><a href="index.html#agenda" class="nav-link-item">Concerts</a></li>
+                    <li><a href="index.html#agenda" class="nav-link-item">Expos</a></li>
+                    <li><a href="index.html#agenda" class="nav-link-item">Spectacles</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" id="event-detail-content">
+        <a href="index.html" class="btn-back" aria-label="Retour à la liste des événements">← Retour à l'affiche</a>
+
+        <div class="event-detail-layout">
+            <div class="event-detail-image-wrapper">
+                <img id="event-detail-img" src="assets/placeholder-event.jpg" alt="Image de l'événement">
+                <span id="event-detail-badge-label" class="event-detail-badge" aria-hidden="true"></span>
+            </div>
+
+            <article class="event-detail-info" aria-label="Informations sur l'événement">
+                <div class="event-detail-meta">
+                    <span id="event-detail-date" class="event-date-badge">Chargement…</span>
+                    <span id="event-detail-price" class="event-price-badge">Chargement…</span>
+                </div>
+
+                <h1 id="event-detail-title">Chargement…</h1>
+
+                <div id="event-detail-rating" class="event-detail-rating" role="img" aria-label="Note de l'événement"></div>
+
+                <p id="event-detail-description" class="event-detail-body">Chargement de la description…</p>
+
+                <div class="booking-card">
+                    <h2>🎟️ Réserver vos places</h2>
+                    <p>Places limitées — Réservation officielle sécurisée via VilleNova</p>
+                    <div class="event-detail-actions">
+                        <a href="index.html" class="btn-primary">Retour à l'affiche</a>
+                        <button id="btn-share" class="btn-share" aria-label="Partager cet événement">Partager 🔗</button>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <button class="btn-secondary" type="button">Proposer un événement / Partenariat</button>
+            <p class="footer-links">
+                <a href="#">Plan du site</a> —
+                <a href="#">Mentions légales</a> —
+                &copy; 2026 VilleNova — Tous droits réservés
+            </p>
+            <p class="eco-label">Ce site respecte les principes de l'éco-conception numérique, du RGPD et de l'accessibilité WCAG 2.2 AA.</p>
+        </div>
+    </footer>
+
+    <button id="back-to-top" aria-label="Retourner en haut de la page" title="Retour en haut">↑</button>
+    <script src="./js/main.js" type="module"></script>
+</body>
+</html>
