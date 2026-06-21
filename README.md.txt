@@ -3,7 +3,7 @@
 Projet d'intégration et de développement d'une plateforme web dynamique connectée à l'API OpenAgenda pour la ville de VilleNova.
 
 ## 🚀 Démo en ligne
-Le projet est déployé et accessible en direct ici : **https://villenova.vercel.app/**
+Le projet est déployé et accessible en direct ici : **https://villenova.vercel.app/** ou **https://noeadouane.github.io/villenova/**
 
 ---
 
