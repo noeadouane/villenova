@@ -1,0 +1,125 @@
+/* ==========================================================================
+   ACCESSIBILITY THEMES & UTILITIES
+   ========================================================================== */
+
+// -------------------------------------------------------------------------
+// 1. DARK MODE
+// -------------------------------------------------------------------------
+body.dark-mode {
+  background-color: #0d0d0d;
+  color: #f1f1f1 !important; 
+
+  // Main structural blocks and containers
+  .main-header, 
+  .search-section, 
+  .events-section, 
+  .event-card, 
+  .booking-card, 
+  .main-footer {
+    background-color: #1a1a1a;
+    border-color: #2a2a2a;
+    color: #f1f1f1 !important;
+  }
+
+  // Logo fix (Link + Text)
+  .logo a, 
+  .logo-text {
+    color: #ffffff !important;
+    text-decoration: none;
+  }
+
+  // Dynamic event cards override (JS injected elements)
+  .events-grid, 
+  .event-card {
+    h2, h3, h4, p, span, div, time {
+      color: #f1f1f1 !important;
+    }
+    
+    a, .btn-secondary, .btn-primary {
+      color: #ffffff !important;
+    }
+  }
+
+  // Navigation menu links
+  .nav-links {
+    .nav-link-item {
+      color: #f1f1f1 !important;
+
+      &:hover {
+        color: #ffffff !important;
+      }
+    }
+  }
+
+  // Category filter buttons
+  .quick-filters {
+    .filter-btn {
+      background-color: #262626;
+      color: #f1f1f1 !important;
+      border: 1px solid #444444;
+
+      &:hover {
+        background-color: #333333;
+        color: #ffffff !important;
+      }
+
+      // Active filter button state
+      &.active {
+        background-color: #f1f1f1;
+        color: #0d0d0d !important;
+        border-color: #ffffff;
+      }
+    }
+  }
+
+  // Footer navigation links
+  .main-footer a {
+    color: #ffffff !important;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// -------------------------------------------------------------------------
+// 2. HIGH CONTRASTE / COLOR BLINDNESS MODE
+// -------------------------------------------------------------------------
+body.high-contrast {
+  filter: contrast(120%) saturate(140%);
+
+  .event-card {
+    border: 2px solid $dark-color;
+  }
+
+  .price-indicator strong, 
+  .event-meta {
+    color: darken($primary-color, 15%);
+    text-shadow: 0.5px 0.5px 0px #000;
+  }
+
+  .filter-btn.active {
+    border-width: 2.5px;
+  }
+}
+
+// -------------------------------------------------------------------------
+// 3. DYSLEXIC FRIENDLY MODE
+// -------------------------------------------------------------------------
+body.dyslexic-friendly {
+  font-family: Arial, Helvetica, sans-serif !important;
+  letter-spacing: 0.08em;
+  word-spacing: 0.15em;
+
+  &.dark-mode {
+    color: #f1f1f1;
+
+    p, span, a, h1, h2, h3 {
+      color: #ccc !important;
+    }
+    
+    h1, h2, h3, .logo-text, strong {
+      color: #ffffff !important;
+    }
+  }
+}
